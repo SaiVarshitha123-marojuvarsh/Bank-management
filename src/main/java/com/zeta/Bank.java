@@ -13,11 +13,14 @@ public class Bank {
     }
 
     float withdraw(Account A,int amount){
+        if(amount<=0) {
+            throw new IllegalArgumentException("amount cannot be negative or zero");
+        }
         if(A.balance>=amount){
             A.balance-=amount;
             return A.balance;
         }else{
-            return -1;
+            throw new InsufficientBalanceException("current balance is less than withdrawing amount");
         }
     }
 
