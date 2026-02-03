@@ -7,10 +7,10 @@ public class Main {
         Account acc = new SavingsAcc(345,50);
         Account acc1 = new CurrentSavings(2457,70);
         Bank b = new Bank();
-        boolean a= b.transfer(acc,acc1,800);
+        boolean a= b.transfer(acc,acc1,-800);
         System.out.println(a);
         SavingsAcc acc2= new SavingsAcc(567,300);
-        float rem_amount = b.withdraw(acc2,-10000);
+        float rem_amount = b.withdraw(acc2,10000);
         System.out.println(rem_amount);
     }
 }

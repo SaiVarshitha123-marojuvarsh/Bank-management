@@ -6,9 +6,13 @@ public class SavingsAcc extends Account{
 
     @Override
     public float deposit(float amount) {
-        if(amount<=0) {
+        validator(amount);
+        return 0;
+    }
+
+    private static void validator(float amount) {
+        if(amount <=0) {
             throw new IllegalArgumentException("amount cannot be negative or zero");
         }
-        return 0;
     }
 }

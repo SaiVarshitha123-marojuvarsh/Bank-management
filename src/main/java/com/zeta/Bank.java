@@ -6,9 +6,7 @@ public class Bank {
     Logger logger = Logger.getLogger("bank");
 
     boolean transfer(Account A, Account B,int amount){
-        if(amount<=0) {
-            throw new IllegalArgumentException("amount cannot be negative or zero");
-        }
+        validator(amount);
         try{
             boolean res = A.transfer(A,B,amount);
             return res;
@@ -18,10 +16,14 @@ public class Bank {
         return false;
     }
 
-    float withdraw(Account A,int amount){
-        if(amount<=0) {
+    private static void validator(int amount) {
+        if(amount <=0) {
             throw new IllegalArgumentException("amount cannot be negative or zero");
         }
+    }
+
+    float withdraw(Account A,int amount){
+        validator(amount);
         try{
             float remain= A.withdraw(A,amount);
             return remain;
