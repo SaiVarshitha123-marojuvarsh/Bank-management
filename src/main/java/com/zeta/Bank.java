@@ -12,4 +12,13 @@ public class Bank {
         }
     }
 
+    float withdraw(Account A,int amount){
+        if(A.balance>=amount){
+            A.balance-=amount;
+            return A.balance;
+        }else{
+            return -1;
+        }
+    }
+
 }

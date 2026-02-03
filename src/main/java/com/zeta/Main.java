@@ -9,5 +9,8 @@ public class Main {
         Bank b = new Bank();
         boolean a= b.transfer(acc,acc1,40);
         System.out.println(a);
+        SavingsAcc acc2= new SavingsAcc(567,300);
+        float rem_amount = b.withdraw(acc2,30);
+        System.out.println(rem_amount);
     }
 }
