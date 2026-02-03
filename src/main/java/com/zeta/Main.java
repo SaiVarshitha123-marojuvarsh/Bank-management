@@ -10,7 +10,7 @@ public class Main {
         boolean a= b.transfer(acc,acc1,800);
         System.out.println(a);
         SavingsAcc acc2= new SavingsAcc(567,300);
-        float rem_amount = b.withdraw(acc2,0);
+        float rem_amount = b.withdraw(acc2,-10000);
         System.out.println(rem_amount);
     }
 }
